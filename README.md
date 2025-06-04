@@ -1,4 +1,10 @@
+## ⚠️ This readme is currently incomplete and some information might be wrong.
+
 # Celler
+
+
+![Alt Text](image_url)
+
 
 A JupyterLab extension which shows cell execution time
 
