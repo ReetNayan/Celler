@@ -1,16 +1,12 @@
-# celler
-
-[![Github Actions Status](https://github.com/ReetNayan/Celler/workflows/Build/badge.svg)](https://github.com/ReetNayan/Celler/actions/workflows/build.yml)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ReetNayan/Celler/main?urlpath=lab)
-
+# Celler
 
 A JupyterLab extension which shows cell execution time
 
-## Requirements
+### Requirements
 
 - JupyterLab >= 4.0.0
 
-## Install
+### Install
 
 To install the extension, execute:
 
@@ -18,7 +14,7 @@ To install the extension, execute:
 pip install celler
 ```
 
-## Uninstall
+### Uninstall
 
 To remove the extension, execute:
 
@@ -26,9 +22,9 @@ To remove the extension, execute:
 pip uninstall celler
 ```
 
-## Contributing
+### Contributing
 
-### Development install
+#### Development install
 
 Note: You will need NodeJS to build the extension package.
 
@@ -64,7 +60,7 @@ By default, the `jlpm build` command generates the source maps for this extensio
 jupyter lab build --minimize=False
 ```
 
-### Development uninstall
+#### Development uninstall
 
 ```bash
 pip uninstall celler
@@ -74,9 +70,9 @@ In development mode, you will also need to remove the symlink created by `jupyte
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
 folder is located. Then you can remove the symlink named `celler` within that folder.
 
-### Testing the extension
+#### Testing the extension
 
-#### Frontend tests
+##### Frontend tests
 
 This extension is using [Jest](https://jestjs.io/) for JavaScript code testing.
 
@@ -87,13 +83,13 @@ jlpm
 jlpm test
 ```
 
-#### Integration tests
+##### Integration tests
 
 This extension uses [Playwright](https://playwright.dev/docs/intro) for the integration tests (aka user level tests).
 More precisely, the JupyterLab helper [Galata](https://github.com/jupyterlab/jupyterlab/tree/master/galata) is used to handle testing the extension in JupyterLab.
 
 More information are provided within the [ui-tests](./ui-tests/README.md) README.
 
-### Packaging the extension
+#### Packaging the extension
 
 See [RELEASE](RELEASE.md)
