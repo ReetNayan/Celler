@@ -19,6 +19,12 @@ The `jlpm` command is JupyterLab's pinned version of
 ```bash
 # Clone the repo to your local environment
 # Change directory to the 'celler' directory
+
+# Install required packages for jlpm
+jlpm install
+# or
+jlpm add @jupyterlab/application @jupyterlab/notebook @jupyterlab/cells
+
 # Install package in development mode
 pip install -e "."
 # Link your development version of the extension with JupyterLab

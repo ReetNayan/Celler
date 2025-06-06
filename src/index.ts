@@ -87,12 +87,31 @@ function attachTimer(cell: Cell): (stop?: boolean) => void {
 
   const start = performance.now();
   const interval = setInterval(() => {
-    const now = performance.now();
-    timerElem.textContent = `⏱ Took: ${((now - start) / 1000).toFixed(3)} sec`;
+    const elapsed = performance.now() - start;
+
+    const ms = Math.floor(elapsed % 1000);
+    const totalSeconds = Math.floor(elapsed / 1000);
+    const s = totalSeconds % 60;
+    const m = Math.floor((totalSeconds / 60) % 60);
+    const h = Math.floor(totalSeconds / 3600);
+
+    const format = (n: number, digits = 2) => n.toString().padStart(digits, '0');
+
+    let display = '';
+    if (h > 0) {
+      display = `${format(h)} hr ${format(m)} min ${format(s)}.${format(ms, 3)} sec`;
+    } else if (m > 0) {
+      display = `${format(m)} min ${format(s)}.${format(ms, 3)} sec`;
+    } else {
+      display = `${s}.${format(ms, 3)} sec`;
+    }
+
+    timerElem.textContent = `⏱ Took: ${display}`;
   }, 100);
 
   return () => clearInterval(interval);
 }
+
 
 
 
